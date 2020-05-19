@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>First canvas</title>
+	<style>
+		body {margin:0;}
+	</style>
+</head>
+<body>
+	<p>Press the "2" key to make the brush smaller. Press the "8" key to make it bigger.</p>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+
+	<script>
+		let circleD = 10;
+		let circleA = 50;
+
+
+		function setup() { // happens once
+			createCanvas(windowWidth, windowHeight); //w, h
+			background(255); // rgb values
+
+		}
+
+		function draw() { //happens often, draws over and over
+			fill(0, circleA);
+			noStroke();
+			ellipse(mouseX, mouseY, circleD);
+
+		}
+		// erase drawing
+		function mousePressed() {
+			background(255); // rgb values
+		}
+
+		// key code info: http://keycode.info/
+		// about keycode in p5 https://p5js.org/reference/#/p5/keyCode
+		function keyPressed() {
+		  // the 8 key
+		  if (keyCode === 56) {
+		    circleD = circleD + 5;
+		  // the 2 key
+		  } else if (keyCode === 50) {
+		    circleD = circleD - 5;
+		    // the + key
+		  } else if (keyCode === 107) {
+		  	circleA = circleA + 3;
+		  	// the - key
+		  } else if (keyCode === 109) {
+		  	circleA = circleA - 3;
+		  }
+		  return false;
+		}
+
+	</script>
+</body>
+</html>
