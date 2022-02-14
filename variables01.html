@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>First canvas</title>
-	<style>
-		body {margin:0;}
-	</style>
-</head>
-<body>
-	
+  <head>
+    <meta charset="UTF-8" />
+    <title>First canvas</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
 
+    <script>
+      function setup() {
+        // happens once
+        createCanvas(800, 600) //w, h
+        background(255, 255, 255) // rgb values
+      }
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+      function draw() {
+        //happens often, draws over and over
 
-	<script>
-		function setup() { // happens once
-			createCanvas(800, 600); //w, h
-			background(220, 0, 200); // rgb values
+        fill(255, 0, 0, 50)
+        noStroke()
+        ellipse(mouseX, mouseY, 50, 50)
+      }
 
-		}
-
-		function draw() { //happens often, draws over and over
-
-			fill(255, 0, 0, 50);
-			noStroke();
-			ellipse(mouseX, mouseY, 50, 50);
-
-		}
-
-		function mousePressed() {
-			background(220, 0, 200); // rgb values
-
-		}
-
-	</script>
-</body>
+      function mousePressed() {
+        background(255, 255, 255) // rgb values
+      }
+    </script>
+  </body>
 </html>
